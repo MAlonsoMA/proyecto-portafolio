@@ -1,0 +1,76 @@
+{%extends 'core/base.html'%}
+
+{%load static%}
+
+{%block title%} Sobre mi... {%endblock%}
+
+{%block content%}
+  <!-- CABECERA -->
+  <div class="about imagen-fondo">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 titulos">
+                <div>
+                    <h1 class="display-4 fw-bold">Diego Mendez</h1>
+                </div>
+                <div>
+                    <h3 class="fs-2">Desarrollador Web</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-4 offset-md-auto">
+                <img class="img-fluid img-thumbnail img-circle img-perfil " src="{% static 'core/img/foto-perfil.png'%}" alt="mm">
+            </div>
+            <div class="col-6">
+                <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim, libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius ex?</h4>
+            </div>
+        </div> 
+        
+        <div class="row d-flex pt-5">
+            <div class="col-12">
+                <hr>
+                <h2 class="fw-bold">Formación Académica</h2>
+                <hr>
+                {%for training in trainings%}
+                    <h3>{{training.title}}</h3>
+                    <p><strong>Título obtenido: </strong>{{training.obtained_title}}</p>
+                    <p style="font-size:0.9em;"><strong>Descripción: </strong>{{training.description}}</p>
+                    <p style="font-size:0.8em;">Fecha realización: {{training.date_of_realization}}</p>
+                    <hr>   
+                {%endfor%}
+                
+                <h2 class="fw-bold mt-1em">Conocimientos</h2>
+                <hr>
+                <section class="skills" id="skills">
+                    <div class="skills__container" id="skills">
+                        
+                        {%for skill in skills%}
+
+                        <div class="card__skills">
+                            <div class="skill__thumbnail">
+                                <img class="skill__logo" src="{{skill.image.url}}" alt="html5">
+                            </div>
+                            <div class="skill__texto">
+                                <p class="skill__titulo">{{skill.title}}</p>
+                            </div>
+                        </div>
+    
+                        {%endfor%}
+    
+                    </div>
+                </section>
+            </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+    
+{%endblock%}
