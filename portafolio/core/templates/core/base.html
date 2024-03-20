@@ -38,19 +38,33 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer__redes">
+            
             <ul class="footer__lista">
                 <li class="footer__item">
-                    <a class="footer__icono" href="https://github.com/" target="blank"><i class="fab fa-github-square fa-1x"></i></a>
+                    {% if LINK_GITHUB %}
+                    <a class="footer__icono" href={{LINK_GITHUB}} target="blank"><i class="fab fa-github-square fa-1x"></i></a>
+                    {% endif %}
                 </li>
 
                 <li class="footer__item">
-                    <a class="footer__icono" href="https://www.linkedin.com/" target="blank"><i class="fab fa-linkedin-in fa-1x"></i></a>
+                    {% if LINK_LINKEDIN %}
+                    <a class="footer__icono" href={{LINK_LINKEDIN}} target="blank"><i class="fab fa-linkedin-in fa-1x"></i></a>
+                    {% endif %}
                 </li>
 
                 <li class="footer__item">
-                    <a class="footer__icono" href="https://twitter.com/" target="blank"><i class="fab fa-twitter fa-1x"></i></a>
+                    {% if LINK_TWITTER %}
+                    <a class="footer__icono" href={{LINK_TWITTER}} target="blank"><i class="fab fa-twitter fa-1x"></i></a>
+                    {% endif %}
+                </li>
+
+                <li class="footer__item">
+                    {% if LINK_FACEBOOK %}
+                    <a class="footer__icono" href={{LINK_FACEBOOK}} target="blank"><i class="fab fa-facebook fa-1x"></i></a>
+                    {% endif %}
                 </li>
             </ul>
+
         </div>
         <div class="footer__texto">
             <p>Diego Mendez &copy; Todos los Derechos Reservados - 2022</p>
